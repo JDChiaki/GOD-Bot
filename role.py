@@ -20,7 +20,7 @@ class Role(commands.Cog):
 
     @commands.command(aliases=['r'])
     @commands.has_permissions(administrator=True)
-    async def role(self, ctx, member: discord.Member, role: discord.Role):
+    async def role(self, ctx, member: discord.Member, *, role: discord.Role):
         if role in member.roles:
             return await ctx.send(f'**{member.display_name}**\'s already had **{role.name}** role')
         await member.add_roles(role)
